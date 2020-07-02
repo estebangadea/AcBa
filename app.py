@@ -37,7 +37,7 @@ app.layout = html.Div(
                     children=[html.Img(src=app.get_asset_url("dash-bio-logo.png"))],
                     href="/Portal",
                 ),
-                html.H2("Titulaciones Acido - Base"),
+                html.H2("Titulación de una muestra de vinagre"),
                 html.A(
                     id="gh-link",
                     children=["View on GitHub"],
@@ -50,10 +50,16 @@ app.layout = html.Div(
         html.Div(
             className="container",
             children=[
-                html.Img(src=app.get_asset_url("dilution.jpg"),
-                    style={'widht': '300', 'float': 'right', 'margin-top':'50px'}),
-                dcc.Graph(id='graph-with-slider',
-                    figure = {'layout' :{ 'float': 'right', 'height': '400', 'width': '600'}}),
+                html.Img(src=app.get_asset_url("image933.png"),
+                    style={'widht': '400','height': '400', 'float': 'right'}),
+                html.Div(
+                    className="tit-graph",
+                    children=[
+                        dcc.Graph(id='graph-with-slider',
+                        figure = {'layout' :{'float': 'right','height': '600px', 'width': '400px'}}),
+                        ],
+                    ),
+
 
                 html.Label(
                     [
@@ -95,11 +101,60 @@ def update_figure(selected_pipeta, selected_matraz):
 
     f_vol = np.arange(1,25,0.2)
     f_ph = qa_utils.construct_curve(4.76, 0.8326394*selected_pipeta/selected_matraz)
-    fig = px.line(y=f_ph, x=f_vol)
+    #fig = px.line(y=f_ph, x=f_vol, color='black')
+    fig = go.Figure(data=go.Scatter(y=f_ph, x=f_vol,line_color='black'))
 
+    fig.add_shape(
+        # filled Rectangle
+            type="rect",
+            x0=1,
+            y0=2.5,
+            x1=24.8,
+            y1=8.2,
+            fillcolor="white",
+            layer='below',
+            line_width=0
+        )
+
+    fig.add_shape(
+            # filled Rectangle
+            type="rect",
+            x0=1,
+            y0=8.2,
+            x1=24.8,
+            y1=10,
+            fillcolor="#fcccfa",
+            layer='below',
+            line_width=0
+            )
+    fig.add_shape(
+            # filled Rectangle
+            type="rect",
+            x0=1,
+            y0=10,
+            x1=24.8,
+            y1=13.5,
+            fillcolor="#f734ef",
+            layer='below',
+            line_width=0
+            )
+    fig.update_xaxes(showline=True,
+                    linewidth=2,
+                    linecolor='black')
+    fig.update_yaxes(showline=True,
+                    linewidth=2,
+                    linecolor='black')
     fig.update_layout(transition_duration=500,
                         xaxis_title = "Volumen de base",
-                        yaxis_title = "pH")
+                        yaxis_title = "pH",
+                        xaxis_showgrid = False,
+                        yaxis_showgrid = False,
+                        margin=dict(
+                        l=10,
+                        r=40,
+                        b=10,
+                        t=10,)
+                        )
 
     return fig
 
