@@ -24,6 +24,7 @@ APP_PATH = str(pl.Path(__file__).parent.resolve())
 df = pd.read_csv(os.path.join(APP_PATH, os.path.join("data", "material.csv")))
 
 app = dash.Dash(__name__)
+server = app.server
 
 app.layout = html.Div(
     className="",
