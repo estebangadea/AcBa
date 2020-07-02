@@ -49,6 +49,12 @@
   color: #dfe8f3 !important;
   border-color: #dfe8f3 !important;
 }
+.container > img {
+  height: 300px;
+  float: right;
+  margin: 10px;
+  transition-duration: 500ms;
+}
 .container {
   max-width: 1200px;
   position: relative;
@@ -57,7 +63,8 @@
 }
 
 .tit-graph {
-  max-width: 500px;
+  max-width: 600px;
+  justify-content: space-around;
   position: relative;
   margin-top: 0px;
   margin-bottom: 30px;
