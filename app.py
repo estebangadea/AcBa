@@ -30,11 +30,11 @@ app.layout = html.Div(
     className="",
     children=[
         html.Div(
-            className="pkcalc-banner",
+            className="unlp-banner",
             children=[
                 html.A(
-                    id="dash-logo",
-                    children=[html.Img(src=app.get_asset_url("dash-bio-logo.png"))],
+                    id="unlp-logo",
+                    children=[html.Img(src=app.get_asset_url("unlp-logo.png"))],
                     href="/Portal",
                 ),
                 html.H2("Titulación de una muestra de vinagre"),
@@ -52,6 +52,14 @@ app.layout = html.Div(
             children=[
                 html.Img(src=app.get_asset_url("image933.png")),
                 html.Div(
+                    className="text-block",
+                    children=[
+                        html.H6("Seleccione volúmenes adecuados"),
+                        html.H6("para realizar la dilución y"),
+                        html.H6("minimizar el error de la bureta.")
+                        ],
+                    ),
+                html.Div(
                     className="tit-graph",
                     children=[
                         dcc.Graph(id='graph-with-slider'),
@@ -61,7 +69,7 @@ app.layout = html.Div(
 
                 html.Label(
                     [
-                        html.Div(["Volumen de la pipeta"]),
+                        html.Div(["Volumen de la pipeta (ml)"]),
                         dcc.Slider(
                             id='pipeta-slider',
                             min=df['pipeta'].min(),
@@ -70,11 +78,11 @@ app.layout = html.Div(
                             marks={str(pipeta): str(pipeta) for pipeta in df['pipeta'].unique()},
                             step=None
                             ),
-                        ], style={'width': '47%', 'display': 'inline-block', 'margin-left':'50px'},
+                        ], style={'width': '45%', 'display': 'inline-block', 'margin-left':'30px'},
                     ),
                 html.Label(
                     [
-                        html.Div(["Volumen del matraz"]),
+                        html.Div(["Volumen del matraz aforado (ml)"]),
                         dcc.Slider(
                             id='matraz-slider',
                             min=df['matraz'].min(),
@@ -143,7 +151,7 @@ def update_figure(selected_pipeta, selected_matraz):
                     linewidth=2,
                     linecolor='black')
     fig.update_layout(transition_duration=500,
-                        xaxis_title = "Volumen de base",
+                        xaxis_title = "Volumen de base (ml)",
                         yaxis_title = "pH",
                         xaxis_showgrid = False,
                         yaxis_showgrid = False,

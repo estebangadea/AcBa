@@ -1,25 +1,25 @@
-.pkcalc-banner > a > img {
+.unlp-banner > a > img {
   height: 70px;
   float: left;
   padding: 10px;
   padding-bottom: 0px;
   transition-duration: 500ms;
 }
-#dash-logo > img {
+#unlp-logo > img {
   height: 50px !important;
   margin-top: 0px;
   margin-left: 10px;
 }
-.pkcalc-banner > a > img:hover {
+.unlp-banner > a > img:hover {
   filter: brightness(2);
 }
-.pkcalc-banner > img {
+.unlp-banner > img {
   height: 36px;
   float: right;
   margin: 10px;
   transition-duration: 500ms;
 }
-.pkcalc-banner h2 {
+.unlp-banner h2 {
   font-size: 20pt;
   font-family: "Times";
   font-weight: 200 !important;
@@ -70,7 +70,7 @@
   margin-bottom: 30px;
 }
 
-.pkcalc-banner {
+.unlp-banner {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -81,73 +81,13 @@
   font-size: 20px;
   margin-bottom: 30px;
 }
-
-.pkcalc-settings {
-  height: 270px;
-  margin-bottom: 30px;
-  background: rgb(245, 247, 249);
-  border: 1px solid #e1e1e1;
-}
-
-.pkcalc-settings > p {
-  margin: 10px 0px 50px 10px;
-}
-
-.pkcalc-settings > div {
-  margin: 0px 40px;
-}
-
-.pkcalc-settings label {
-  display: flex;
-  justify-content: space-around;
-  margin: 10px 0px;
-}
-
-.pkcalc-settings label div {
-  margin-top: auto;
-  margin-bottom: auto;
-  font-size: 12px;
-  color: grey;
-  width: 80px;
-}
-
-.pkcalc-settings input {
-  height: 30px;
-  width: 55px;
-  font-size: 12px;
-}
-
-.pkcalc-data-table {
-  height: 271px;
-  overflow: auto;
-}
-
-#data-table td {
-  padding: 5px 15px;
-}
-
-.pkcalc-results-table {
-  overflow: auto;
-}
-
-#results-table td {
-  padding: 12px 0px;
-  text-align: center;
-  background: rgb(245, 247, 249);
-}
-
-#results-graph {
-  border: 1px solid #e1e1e1;
-}
-
-td {
-  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
-  font-size: 12px;
-}
-
-th {
-  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
-  font-size: 12px;
+/* Bottom right text */
+.text-block {
+  position: absolute;
+  top: 320px;
+  right: 10px;
+  background-color: lightgrey;
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
 }
