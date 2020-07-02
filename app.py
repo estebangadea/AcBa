@@ -191,7 +191,7 @@ def update_figure(selected_pipeta, selected_matraz, selected_value):
     fig.update_yaxes(showline=True,
                     linewidth=2,
                     linecolor='black')
-    fig.update_layout(transition_duration=5,
+    fig.update_layout(
                         xaxis_title = "Volumen de base (ml)",
                         yaxis_title = "pH",
                         xaxis_showgrid = False,
