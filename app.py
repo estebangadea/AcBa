@@ -50,13 +50,11 @@ app.layout = html.Div(
         html.Div(
             className="container",
             children=[
-                html.Img(src=app.get_asset_url("image933.png"),
-                    style={'widht': '400','height': '400', 'float': 'right'}),
+                html.Img(src=app.get_asset_url("image933.png")),
                 html.Div(
                     className="tit-graph",
                     children=[
-                        dcc.Graph(id='graph-with-slider',
-                        figure = {'layout' :{'float': 'right','height': '600px', 'width': '400px'}}),
+                        dcc.Graph(id='graph-with-slider'),
                         ],
                     ),
 
@@ -72,7 +70,7 @@ app.layout = html.Div(
                             marks={str(pipeta): str(pipeta) for pipeta in df['pipeta'].unique()},
                             step=None
                             ),
-                        ], style={'width': '40%', 'display': 'inline-block'},
+                        ], style={'width': '47%', 'display': 'inline-block', 'margin-left':'50px'},
                     ),
                 html.Label(
                     [
@@ -85,7 +83,7 @@ app.layout = html.Div(
                             marks={str(matraz): str(matraz) for matraz in df['matraz'].unique()},
                             step=None
                             ),
-                        ], style={'width': '40%', 'display': 'inline-block', 'float':'right'},
+                        ], style={'width': '40%', 'display': 'inline-block', 'float':'right', },
                     ),
                 ],
             ),
@@ -150,8 +148,8 @@ def update_figure(selected_pipeta, selected_matraz):
                         xaxis_showgrid = False,
                         yaxis_showgrid = False,
                         margin=dict(
-                        l=10,
-                        r=40,
+                        l=0,
+                        r=10,
                         b=10,
                         t=10,)
                         )
