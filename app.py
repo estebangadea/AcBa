@@ -41,7 +41,7 @@ app.layout = html.Div(
                 html.A(
                     id="gh-link",
                     children=["View on GitHub"],
-                    href="https://github.com/estebangadea/QA",
+                    href="https://github.com/estebangadea/AcBa",
                     style={"color": "black", "border": "solid 1px black"},
                 ),
                 html.Img(src=app.get_asset_url("GitHub-Mark-64px.png")),
