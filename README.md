@@ -1,15 +1,16 @@
 # Titulacion Acido-Base
 
-## About this app
+## Acerca de la app
 
-This app calculates pharmacokinetic parameters from entered plasma
-concentrations for up to 48 subjects.
+Esta app calcula la curva de titulacion teorica de una titulacion de
+una muestra de vinagre con un acido monoprotico fuerte.
 
-### Noncompartmental Pharmacokinetics Analysis (NCA)
+### Seleccion del material
 
-Noncompartmental pharmacokinetics is typically used to analyze data from
-small animal studies during the lead optimization phase of drug discovery.
-These studies are used to help predict human dosing and plan safety studies.
+La curva se calcula estimando un 5% p/v de acido acetico en el vinagre,
+una alicuota de 10ml y una dilucion realizada con los volumenes seleccionados.
+El grafico muestra en regiones coloreadas los diferentes colores que
+desarrolla la fenolftaleina en respuesta al pH.
 
 ## How to run this app
 
@@ -44,11 +45,4 @@ Open a browser at http://127.0.0.1:8050
 ## Screenshots
 
 ![demo.gif](demo.gif)
-
-## Notes:
-* AUC values are calculated using the trapezoid rule on non-logged
-concentrations.
-* The AUC calculation includes t=0, even if no concentration is entered, in which
-case the concentration is assumed to be zero.
-* The terminal elimination rate, used to determine t<sub>1/2</sub> and
-AUC<sub>0-inf</sub>, is calculated from the final three time points.    
+ 
