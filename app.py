@@ -88,7 +88,7 @@ app.layout = html.Div(
                             marks={str(pipeta): str(pipeta) for pipeta in df['pipeta'].unique()},
                             step=None
                             ),
-                        ], style={'width': '300px', 'display': 'inline-block', 'margin-left':'30px'},
+                        ], style={'width': '30%', 'display': 'inline-block', 'margin-left':'30px'},
                     ),
                 html.Label(
                     [
@@ -101,7 +101,7 @@ app.layout = html.Div(
                             marks={str(matraz): str(matraz) for matraz in df['matraz'].unique()},
                             step=None
                             ),
-                        ], style={'width': '300px', 'display': 'inline-block', 'margin-left':'50px' },
+                        ], style={'width': '30%', 'display': 'inline-block', 'margin-left':'50px' },
                     ),
                 html.Div(
                     [
@@ -117,7 +117,7 @@ app.layout = html.Div(
                             ],
                             value='FF'
                             ),
-                        ], style={'width': '200px', 'display': 'inline-block', 'margin-left':'50px' },
+                        ], style={'width': '20%', 'display': 'inline-block', 'margin-left':'50px' },
                     ),
                 ],
             ),
